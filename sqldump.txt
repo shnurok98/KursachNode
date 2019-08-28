@@ -1,0 +1,998 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.6.9
+-- Dumped by pg_dump version 9.6.9
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: assembly_var; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.assembly_var (
+    id integer NOT NULL,
+    variant character varying(50)
+);
+
+
+ALTER TABLE public.assembly_var OWNER TO postgres;
+
+--
+-- Name: assembly_var_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.assembly_var_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.assembly_var_id_seq OWNER TO postgres;
+
+--
+-- Name: assembly_var_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.assembly_var_id_seq OWNED BY public.assembly_var.id;
+
+
+--
+-- Name: condition; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.condition (
+    id integer NOT NULL,
+    condition text
+);
+
+
+ALTER TABLE public.condition OWNER TO postgres;
+
+--
+-- Name: condition_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.condition_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.condition_id_seq OWNER TO postgres;
+
+--
+-- Name: condition_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.condition_id_seq OWNED BY public.condition.id;
+
+
+--
+-- Name: destination; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.destination (
+    id integer NOT NULL,
+    destination text
+);
+
+
+ALTER TABLE public.destination OWNER TO postgres;
+
+--
+-- Name: destination_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.destination_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.destination_id_seq OWNER TO postgres;
+
+--
+-- Name: destination_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.destination_id_seq OWNED BY public.destination.id;
+
+
+--
+-- Name: drawing; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.drawing (
+    id integer NOT NULL,
+    drawing character varying(50)
+);
+
+
+ALTER TABLE public.drawing OWNER TO postgres;
+
+--
+-- Name: drawing_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.drawing_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.drawing_id_seq OWNER TO postgres;
+
+--
+-- Name: drawing_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.drawing_id_seq OWNED BY public.drawing.id;
+
+
+--
+-- Name: parameters; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.parameters (
+    id integer NOT NULL,
+    awb integer,
+    awt integer,
+    a integer,
+    a1 integer,
+    a2 integer,
+    b integer,
+    h integer,
+    h1 integer,
+    h2 integer,
+    l1 integer,
+    l2 integer,
+    l3 integer,
+    l4 integer,
+    l5 integer,
+    b1 integer,
+    b2 integer,
+    d1 character varying(10),
+    d2 integer,
+    d3 integer,
+    nh1 integer,
+    nh2 integer,
+    nl1 integer,
+    nl2 integer,
+    t1 integer,
+    t2 integer,
+    capacity integer,
+    weight integer
+);
+
+
+ALTER TABLE public.parameters OWNER TO postgres;
+
+--
+-- Name: parameters2; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.parameters2 (
+    id integer NOT NULL,
+    awb integer,
+    awn integer,
+    awt integer,
+    a integer,
+    a1 integer,
+    b integer,
+    b1 integer,
+    h integer,
+    h1 integer,
+    h2 integer,
+    l1 integer,
+    l2 integer,
+    l3 integer,
+    l4 integer,
+    l5 integer,
+    l6 integer,
+    l7 integer,
+    nb1 integer,
+    nb2 integer,
+    d1 integer,
+    d2 integer,
+    d3 character varying(10),
+    d4 character varying(10),
+    d5 integer,
+    d6 character varying(10),
+    d7 integer,
+    d8 integer,
+    nh1 integer,
+    nh2 integer,
+    nh3 integer,
+    nh4 integer,
+    nl1 integer,
+    nl2 integer,
+    nl3 integer,
+    nl4 integer,
+    t1 character varying(10),
+    t2 character varying(10),
+    v character varying(10),
+    weight integer
+);
+
+
+ALTER TABLE public.parameters2 OWNER TO postgres;
+
+--
+-- Name: parameters2_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.parameters2_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.parameters2_id_seq OWNER TO postgres;
+
+--
+-- Name: parameters2_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.parameters2_id_seq OWNED BY public.parameters2.id;
+
+
+--
+-- Name: parameters_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.parameters_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.parameters_id_seq OWNER TO postgres;
+
+--
+-- Name: parameters_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.parameters_id_seq OWNED BY public.parameters.id;
+
+
+--
+-- Name: reducer; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.reducer (
+    id integer NOT NULL,
+    stamp character varying(30),
+    image character varying(50),
+    id_destination integer,
+    id_condition integer,
+    id_drawing integer,
+    id_parameters integer,
+    id_assembly_var integer,
+    id_specification integer
+);
+
+
+ALTER TABLE public.reducer OWNER TO postgres;
+
+--
+-- Name: reducer_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.reducer_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.reducer_id_seq OWNER TO postgres;
+
+--
+-- Name: reducer_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.reducer_id_seq OWNED BY public.reducer.id;
+
+
+--
+-- Name: specification; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.specification (
+    id integer NOT NULL,
+    gear_ratio character varying(100),
+    axis_distance integer,
+    nom_rot integer,
+    in_sh integer,
+    out_sh integer,
+    kpd character varying(10),
+    weight integer
+);
+
+
+ALTER TABLE public.specification OWNER TO postgres;
+
+--
+-- Name: specification2; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.specification2 (
+    id integer NOT NULL,
+    id_reducer integer,
+    rotation_freq integer,
+    mode_work character varying(10),
+    nom8 integer,
+    nom10 integer,
+    nom12_5 integer,
+    nom16 integer,
+    nom20 integer,
+    nom25 integer,
+    nom31_5 integer,
+    nom40 integer,
+    nom50 integer
+);
+
+
+ALTER TABLE public.specification2 OWNER TO postgres;
+
+--
+-- Name: specification2_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.specification2_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.specification2_id_seq OWNER TO postgres;
+
+--
+-- Name: specification2_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.specification2_id_seq OWNED BY public.specification2.id;
+
+
+--
+-- Name: specification_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.specification_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.specification_id_seq OWNER TO postgres;
+
+--
+-- Name: specification_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.specification_id_seq OWNED BY public.specification.id;
+
+
+--
+-- Name: stamp; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.stamp (
+    id integer NOT NULL,
+    id_reducer integer,
+    type character varying(50),
+    axis_distance integer,
+    nom_ratio double precision,
+    build_opt integer,
+    shaft_end character varying(1),
+    clim_ver character varying(1),
+    accom_category integer
+);
+
+
+ALTER TABLE public.stamp OWNER TO postgres;
+
+--
+-- Name: stamp_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.stamp_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.stamp_id_seq OWNER TO postgres;
+
+--
+-- Name: stamp_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.stamp_id_seq OWNED BY public.stamp.id;
+
+
+--
+-- Name: assembly_var id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.assembly_var ALTER COLUMN id SET DEFAULT nextval('public.assembly_var_id_seq'::regclass);
+
+
+--
+-- Name: condition id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.condition ALTER COLUMN id SET DEFAULT nextval('public.condition_id_seq'::regclass);
+
+
+--
+-- Name: destination id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.destination ALTER COLUMN id SET DEFAULT nextval('public.destination_id_seq'::regclass);
+
+
+--
+-- Name: drawing id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.drawing ALTER COLUMN id SET DEFAULT nextval('public.drawing_id_seq'::regclass);
+
+
+--
+-- Name: parameters id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.parameters ALTER COLUMN id SET DEFAULT nextval('public.parameters_id_seq'::regclass);
+
+
+--
+-- Name: parameters2 id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.parameters2 ALTER COLUMN id SET DEFAULT nextval('public.parameters2_id_seq'::regclass);
+
+
+--
+-- Name: reducer id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.reducer ALTER COLUMN id SET DEFAULT nextval('public.reducer_id_seq'::regclass);
+
+
+--
+-- Name: specification id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.specification ALTER COLUMN id SET DEFAULT nextval('public.specification_id_seq'::regclass);
+
+
+--
+-- Name: specification2 id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.specification2 ALTER COLUMN id SET DEFAULT nextval('public.specification2_id_seq'::regclass);
+
+
+--
+-- Name: stamp id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.stamp ALTER COLUMN id SET DEFAULT nextval('public.stamp_id_seq'::regclass);
+
+
+--
+-- Data for Name: assembly_var; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.assembly_var (id, variant) FROM stdin;
+1	images/variant1.png
+2	1234
+3	1234
+4	1234
+5	2341
+6	1
+7	1
+8	1
+9	1
+10	1
+11	1
+12	1
+13	1
+14	images/variant1.png
+16	2
+15	1
+22	images/variant2.png
+23	images/variant2.png
+24	images/variant2.png
+25	11
+17	images/variant1.png
+18	images/variant1.png
+19	images/variant1.png
+20	images/variant21.png
+21	images/variant21.png
+\.
+
+
+--
+-- Name: assembly_var_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.assembly_var_id_seq', 25, true);
+
+
+--
+-- Data for Name: condition; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.condition (id, condition) FROM stdin;
+1	\N
+2	\N
+3	
+4	asdasdfasdfsdfsadfasdf
+5	21342
+6	1
+7	1
+8	1
+9	1
+10	1
+11	1
+12	1
+13	11
+14	Нагрузка постоянная и переменная, одного направления и реверсивная;\nРабота постоянная и с периодическими остановками;\nВращение валов в любую сторону, частота вращения быстроходного вала до 1500 об/мин.
+16	2
+15	12312
+17	Нагрузка постоянная и переменная, одного направления и реверсивная;\nРабота постоянная и с периодическими остановками;\nВращение валов в любую сторону, частота вращения быстроходного вала до 1500 об/мин.
+18	Нагрузка постоянная и переменная, одного направления и реверсивная;\nРабота постоянная и с периодическими остановками;\nВращение валов в любую сторону, частота вращения быстроходного вала до 1500 об/мин.
+19	Нагрузка постоянная и переменная, одного направления и реверсивная;\nРабота постоянная и с периодическими остановками;\nВращение валов в любую сторону, частота вращения быстроходного вала до 1500 об/мин.
+22	Нагрузка постоянная и переменная одного направления и реверсивная;\nРабота длительная или с периодическими остановками;\nВращение валов в любую сторону;\nЧастота вращения входного вала не должна превышать 1800 об/мин
+23	Нагрузка постоянная и переменная одного направления и реверсивная;\nРабота длительная или с периодическими остановками;\nВращение валов в любую сторону;\nЧастота вращения входного вала не должна превышать 1800 об/мин
+20	Вращение валов в обе стороны;\nКлиматические условия У, Т, категория размещения-2,3 по ГОСТ 15150;\nНеагрессивная среда, умеренная запыленность и влажность;\nЧастота вращения входного вала-не более 1500 об/мин.
+21	Вращение валов в обе стороны;\nКлиматические условия У, Т, категория размещения-2,3 по ГОСТ 15150;\nНеагрессивная среда, умеренная запыленность и влажность;\nЧастота вращения входного вала-не более 1500 об/мин.
+24	Нагрузка постоянная и переменная одного направления и реверсивная;\nРабота длительная или с периодическими остановками;\nВращение валов в любую сторону;\nЧастота вращения входного вала не должна превышать 1800 об/мин
+25	1
+\.
+
+
+--
+-- Name: condition_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.condition_id_seq', 25, true);
+
+
+--
+-- Data for Name: destination; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.destination (id, destination) FROM stdin;
+1	Редукторы Ц2У-Н зубчатые цилиндрические двухступенчатые узкие горизонтальные общего назначения служат для увеличения крутящих моментов и уменьшения частоты вращения. Редукторы применяются в районах с умеренным климатом (исполнение У), сухим и влажным тропическим климатом (исполнение Т), категорий размещения 1, 2, 3, 4 (работа на открытом воздухе под навесом, в закрытых помещениях и помещениях с регулируемым климатом).
+2	32411
+3	32411
+4	32411
+5	213421
+6	1
+7	1
+8	1
+9	1
+10	1
+11	1
+12	1
+13	1
+14	Редукторы Ц2У-Н зубчатые цилиндрические двухступенчатые узкие горизонтальные общего назначения служат для увеличения крутящих моментов и уменьшения частоты вращения. Редукторы применяются в районах с умеренным климатом (исполнение У), сухим и влажным тропическим климатом (исполнение Т), категорий размещения 1, 2, 3, 4 (работа на открытом воздухе под навесом, в закрытых помещениях и помещениях с регулируемым климатом).
+16	2
+18	Редукторы Ц2У-Н зубчатые цилиндрические двухступенчатые узкие горизонтальные общего назначения служат для увеличения крутящих моментов и уменьшения частоты вращения. Редукторы применяются в районах с умеренным климатом (исполнение У), сухим и влажным тропическим климатом (исполнение Т), категорий размещения 1, 2, 3, 4 (работа на открытом воздухе под навесом, в закрытых помещениях и помещениях с регулируемым климатом).
+15	213
+19	Редукторы Ц2У-Н зубчатые цилиндрические двухступенчатые узкие горизонтальные общего назначения служат для увеличения крутящих моментов и уменьшения частоты вращения. Редукторы применяются в районах с умеренным климатом (исполнение У), сухим и влажным тропическим климатом (исполнение Т), категорий размещения 1, 2, 3, 4 (работа на открытом воздухе под навесом, в закрытых помещениях и помещениях с регулируемым климатом).
+17	Редукторы Ц2У-Н зубчатые цилиндрические двухступенчатые узкие горизонтальные общего назначения служат для увеличения крутящих моментов и уменьшения частоты вращения. Редукторы применяются в районах с умеренным климатом (исполнение У), сухим и влажным тропическим климатом (исполнение Т), категорий размещения 1, 2, 3, 4 (работа на открытом воздухе под навесом, в закрытых помещениях и помещениях с регулируемым климатом).
+21	Редукторы цилиндрические двухступенчатые горизонтальные с передачами Новикова общемашиностроительного применения типоразмеров 1Ц2Н-450, 1Ц2Н-500 используются в приводах различных машин и механизмов для изменения крутящих моментов и частоты вращения.
+20	Редукторы цилиндрические двухступенчатые горизонтальные с передачами Новикова общемашиностроительного применения типоразмеров 1Ц2Н-450, 1Ц2Н-500 используются в приводах различных машин и механизмов для изменения крутящих моментов и частоты вращения.
+22	Редукторы Ц3У зубчатые цилиндрические трехступенчатые узкие горизонтальные общего назначения служат для увеличения крутящих моментов и уменьшения частоты вращения. Редукторы применяются в макроклиматических районах с умеренным климатом (исполнение У), сухим и влажным тропическим климатом (исполнение Т), категорий размещения 1, 2, 3, 4 (работа на открытом воздухе под навесом, в закрытых помещениях и помещениях с регулируемым климатом).
+23	Редукторы Ц3У зубчатые цилиндрические трехступенчатые узкие горизонтальные общего назначения служат для увеличения крутящих моментов и уменьшения частоты вращения. Редукторы применяются в макроклиматических районах с умеренным климатом (исполнение У), сухим и влажным тропическим климатом (исполнение Т), категорий размещения 1, 2, 3, 4 (работа на открытом воздухе под навесом, в закрытых помещениях и помещениях с регулируемым климатом).
+24	Редукторы Ц3У зубчатые цилиндрические трехступенчатые узкие горизонтальные общего назначения служат для увеличения крутящих моментов и уменьшения частоты вращения. Редукторы применяются в макроклиматических районах с умеренным климатом (исполнение У), сухим и влажным тропическим климатом (исполнение Т), категорий размещения 1, 2, 3, 4 (работа на открытом воздухе под навесом, в закрытых помещениях и помещениях с регулируемым климатом).
+25	1
+\.
+
+
+--
+-- Name: destination_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.destination_id_seq', 25, true);
+
+
+--
+-- Data for Name: drawing; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.drawing (id, drawing) FROM stdin;
+1	images/drawing1.png
+2	3241
+3	3241
+4	3241
+5	321421
+6	1
+7	1
+8	1
+9	1
+10	1
+11	1
+12	1
+13	1
+14	images/drawing1.png
+16	22
+15	sadas
+22	images/drawing2.png
+23	images/drawing2.png
+24	images/drawing2.png
+25	1
+17	images/drawing1.png
+18	images/drawing1.png
+19	images/drawing1.png
+20	images/drawing1.png
+21	images/drawing1.png
+\.
+
+
+--
+-- Name: drawing_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.drawing_id_seq', 25, true);
+
+
+--
+-- Data for Name: parameters; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.parameters (id, awb, awt, a, a1, a2, b, h, h1, h2, l1, l2, l3, l4, l5, b1, b2, d1, d2, d3, nh1, nh2, nl1, nl2, t1, t2, capacity, weight) FROM stdin;
+1	200	315	740	260	370	340	335	685	35	300	420	1045	360	215	14	28	50k6	110	28	9	16	110	210	44	100	30	520
+2	32	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+3	32	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+4	32	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+5	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+6	200	315	740	260	370	340	335	685	35	300	420	1045	360	215	14	28	50k6	110	28	9	16	110	210	44	100	30	520
+7	1	1	1	1	1	11	1	1	1	1	1	1	1	1	1	1	11	1	1	1	1	1	1	1	1	1	1
+13	4	4	4	4	4	4	4	4	4	4	4	4	4	4	4	4	4	4	4	4	4	4	4	4	4	4	4
+8	200	315	740	260	370	340	335	658	35	300	420	1045	360	215	14	28	50k6	110	28	9	16	110	210	44	100	30	520
+9	225	355	850	280	425	360	375	740	35	320	440	1170	405	250	16	32	55k6	125	28	10	18	110	210	44	114	35	700
+10	250	400	950	330	475	420	425	835	42	380	500	1320	450	280	18	36	60k6	140	35	11	20	140	250	53	128	60	940
+11	280	450	1060	515	530	590	475	955	50	500	650	1475	500	310	22	42	80л6	160	35	14	22	170	300	71	157	90	1530
+12	315	500	1220	580	615	650	530	1030	60	530	690	1660	530	360	25	45	90л6	180	42	14	25	170	300	81	165	100	2100
+\.
+
+
+--
+-- Data for Name: parameters2; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.parameters2 (id, awb, awn, awt, a, a1, b, b1, h, h1, h2, l1, l2, l3, l4, l5, l6, l7, nb1, nb2, d1, d2, d3, d4, d5, d6, d7, d8, nh1, nh2, nh3, nh4, nl1, nl2, nl3, nl4, t1, t2, v, weight) FROM stdin;
+1	1	1	1	1	1	1	1	1	1	11	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+2	2	2	2	2	2	2	2	2	2	2	2	2	2	2	2	2	2	2	2	2	2	2	2	2	2	2	2	2	2	2	2	2	2	2	2	2	2	2	2
+3	160	100	80	475	140	195	206	170	345	28	160	224	630	195	136	145	530	4	14	20	55	M12x1,25	M36x3	24	M24	40	88	4	9	32	110	36	82	50	110	2,5	5,5	6,2	160
+4	200	125	100	580	165	230	243	212	425	36	190	280	775	236	165	185	650	5	18	25	70	M16x1,5	M48x3	24	M24	45	100	5	11	32	125	42	105	60	140	3,0	7,0	12,0	186
+5	250	160	125	750	218	280	290	265	530	40	236	335	950	290	212	230	825	5	22	30	90	M16x1,5	M48x3	8	M24	50	130	5	14	32	160	58	130	80	170	3	9,0	18,4	335
+\.
+
+
+--
+-- Name: parameters2_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.parameters2_id_seq', 5, true);
+
+
+--
+-- Name: parameters_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.parameters_id_seq', 13, true);
+
+
+--
+-- Data for Name: reducer; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.reducer (id, stamp, image, id_destination, id_condition, id_drawing, id_parameters, id_assembly_var, id_specification) FROM stdin;
+17	Ц2У-315Н	images/reducer1.png	17	17	17	8	17	3
+18	Ц2У-355Н	images/reducer1.png	18	18	18	9	18	4
+19	Ц2У-400Н	images/reducer1.png	19	19	19	10	19	5
+20	Ц2Н-450	images/reducer1.png	20	20	20	11	20	6
+21	Ц2Н-500	images/reducer1.png	21	21	21	12	21	7
+24	Ц3У-250	images/reducer2.png	24	24	24	5	24	10
+22	Ц3У-160	images/reducer2.png	22	22	22	3	22	8
+23	Ц3У-200	images/reducer2.png	23	23	23	4	23	9
+\.
+
+
+--
+-- Name: reducer_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.reducer_id_seq', 25, true);
+
+
+--
+-- Data for Name: specification; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.specification (id, gear_ratio, axis_distance, nom_rot, in_sh, out_sh, kpd, weight) FROM stdin;
+2	2	2	2	2	2	2	2
+1	1	1	1	1	1	1	1
+8	31.5; 40; 45; 50; 56; 63; 80; 100; 125; 160; 200	160	1250	500	8000	0.5	160
+9	31.5; 40; 45; 50; 56; 63; 80; 100; 125; 160; 200	200	2500	1000	11200	0.97	186
+10	16; 20; 25; 31.5; 40; 45; 50; 56; 63; 80; 100; 125; 160; 200	250	5000	2000	16000	0.97	335
+11	4	4	4	4	4	4	4
+3	8; 10; 12.5; 16; 20; 25; 31.5; 40; 50	315	8700	2000	22400	0.98	520
+4	8; 10; 12.5; 16; 20; 25; 31.5; 40; 50	355	14000	2500	28000	0.98	700
+5	8; 10; 12.5; 16; 20; 25; 31.5; 40; 50	400	16300	3550	31500	0.98	940
+6	8; 10; 12.5; 16; 20; 25; 31.5; 40; 50	450	40000	8200	71000	0.97	1530
+7	8; 10; 12.5; 16; 20; 25; 31.5; 40; 50	500	56000	10000	100000	0.97	2100
+\.
+
+
+--
+-- Data for Name: specification2; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.specification2 (id, id_reducer, rotation_freq, mode_work, nom8, nom10, nom12_5, nom16, nom20, nom25, nom31_5, nom40, nom50) FROM stdin;
+81	25	1	1	1	1	1	1	1	1	1	1	1
+82	25	1	1	1	1	1	1	1	1	1	1	1
+83	25	1	2	2	2	2	2	2	2	2	2	2
+84	25	1	1	1	1	1	1	1	1	1	1	1
+85	25	2	2	2	2	2	2	2	2	2	2	2
+86	25	2	1	2	3	4	5	6	7	8	9	0
+91	25	2	1	0	8	9	7	6	5	4	3	2
+90	25	2	2	2	2	2	2	2	2	2	2	2
+93	25	4	50	4	4	4	4	4	4	4	4	4
+94	25	4	4	4	4	4	4	4	4	4	4	4
+95	25	4	4	4	4	4	4	4	4	4	4	4
+96	25	4	4	4	4	4	4	4	4	4	4	4
+92	25	2	1	2	3	3	3	3	3	3	3	3
+2	17	500	С	9200	9200	9200	9200	8600	8600	8600	8700	7900
+8	17	750	Н	8100	8200	8300	8200	8200	8300	8400	7900	7600
+6	17	750	С	9200	9200	9200	9200	8600	8600	8600	8600	7600
+7	17	750	Т	9100	9200	9200	9100	8600	8600	8600	8600	7600
+16	17	1500	Н	8000	8000	8100	8100	7700	7800	7900	7600	7500
+12	17	1000	Н	8000	8100	8200	8200	7900	8100	8300	7800	7600
+13	17	1500	Л	9100	9200	9300	9600	9000	9300	9700	8600	8900
+11	17	1000	Т	8900	9100	9100	8800	8600	8600	8600	8600	7600
+14	17	1500	С	8900	9100	9200	9200	8600	8600	8600	8600	7600
+15	17	1500	Т	8600	8800	8800	8500	8600	8600	8600	8409	7600
+9	17	1000	Л	9200	9600	9900	9800	9600	10000	9800	8700	9600
+1	17	500	Л	10300	10700	10400	9900	10800	11200	9800	8700	10700
+4	17	500	Н	8300	8400	8600	8300	8400	8400	8600	8200	7600
+3	17	500	Т	9200	9200	9200	9200	8600	8600	8600	8600	7600
+20	18	500	Н	11600	11800	11900	11500	10600	11700	11700	11400	10400
+10	17	1000	С	9200	9200	9200	9200	8600	8600	8600	8600	7600
+27	18	1000	Т	12200	12600	12600	12600	11500	11700	11700	11700	10400
+28	18	1000	Н	12200	11300	11400	11200	10200	11300	11500	10800	10400
+29	18	1500	Л	12300	12400	12600	12900	12100	12700	13200	11800	12200
+17	18	500	Л	14000	14600	14200	13500	12500	15300	13500	12000	14700
+21	18	750	Л	13200	13700	14000	13400	12500	14300	13500	12000	13700
+30	18	1500	С	12300	12400	12500	12600	11300	11700	11700	11700	10400
+31	18	1500	Т	11900	12100	12100	11700	11100	11700	11700	11700	10400
+32	18	1500	Н	11100	11200	11200	11200	9800	10900	11100	10500	10400
+19	18	500	Т	12600	12600	12600	12600	12000	11700	11700	11700	10400
+35	19	500	Т	17700	17700	17700	17700	16400	16400	16400	16200	14600
+43	19	1000	Т	0	0	0	44200	39800	45200	41200	40000	40000
+34	19	500	С	17700	17700	17700	17700	16400	16400	16400	16200	15000
+33	19	500	Л	19600	19800	19400	18400	20700	20900	18300	16200	20400
+38	19	750	С	17700	17700	17700	17700	16400	16400	16400	15100	14600
+37	19	750	Л	18500	19300	19100	18200	19300	20000	18300	16200	19100
+36	19	500	Н	16200	16600	16500	15900	16400	16400	16400	15700	14600
+39	19	750	Т	17400	17700	17700	17400	16400	16400	16400	16200	14600
+42	19	1000	С	0	0	0	44200	39800	45200	41200	40000	40000
+44	19	1000	Н	0	0	0	44200	39800	45200	41200	40000	40000
+45	19	1500	Л	0	0	17700	17500	17200	17800	17900	15900	17000
+46	19	1500	С	0	0	17500	17500	16400	16400	16400	15900	14600
+47	19	1500	Т	0	0	16800	16300	16400	16400	16400	15900	14600
+48	19	1500	Н	0	0	16100	15500	15600	15900	15600	14600	14600
+50	20	500	С	27700	27700	27700	27700	26400	26400	26400	26200	25000
+51	20	500	Т	27700	27700	27700	27700	26400	26400	26400	26200	24600
+52	20	500	Н	26200	26600	26500	25900	26400	26400	26400	25700	24600
+53	20	750	Л	28500	29300	29100	28200	29300	20000	28300	26200	29100
+54	20	750	С	27700	27700	27700	27700	26400	26400	26400	25100	24600
+56	20	750	Н	26100	26300	26300	25700	26400	26400	26400	25100	24600
+58	20	1000	С	27500	27700	27700	27700	26400	26400	26400	26200	24600
+57	20	1000	Л	27500	28300	28700	28000	28400	29100	28200	26200	28200
+59	20	1000	Т	27000	27500	27400	26800	26400	26400	26400	26200	24600
+55	20	750	Т	27400	27700	27700	27400	26400	26400	26400	26200	24600
+61	20	1500	Л	0	0	27700	27500	27200	27800	27900	25900	27000
+62	20	1500	С	0	0	27500	27500	26400	26400	26400	25900	24600
+63	20	1500	Т	0	0	26800	26300	26400	26400	26400	25900	24600
+60	20	1000	Н	26100	26300	26100	25600	26400	26400	26100	25000	24600
+49	20	500	Л	29600	29800	29400	28400	20700	20900	28300	26200	20400
+66	21	500	С	47700	47700	47700	47700	46400	46400	46400	46200	45000
+67	21	500	Т	47700	47700	47700	47700	46400	46400	46400	46200	44600
+68	21	500	Н	46200	46600	46500	45900	46400	46400	46400	45700	44600
+71	21	750	Т	47400	47700	47700	47400	46400	46400	46400	45100	44600
+69	21	750	Л	48500	49300	49100	48200	49300	40000	48300	46200	49100
+70	21	750	С	47700	47700	47700	47700	46400	46400	46400	45100	44600
+74	21	1000	С	44400	46600	46900	46000	41100	45200	42200	40000	40000
+72	21	750	Н	46100	46300	46300	45700	46400	46400	46400	45100	44600
+73	21	1000	Л	44400	48000	48000	46000	41100	49600	42200	48700	43200
+75	21	1000	Т	44400	46600	46900	46000	41100	45200	42200	40000	40000
+76	21	1000	Н	44400	46600	46900	46000	41100	45200	42200	40000	40000
+77	21	1500	Л	0	0	0	44200	39800	48100	41200	45500	42500
+78	21	1500	С	0	0	0	44200	39800	45200	41200	40000	40000
+79	21	1500	Т	0	0	0	44200	39800	45200	41200	40000	40000
+80	21	1500	Н	0	0	0	44200	39800	45200	41200	40000	40000
+65	21	500	Л	49600	49800	49400	48400	40700	40900	48300	46200	50400
+88	25	2	1	1	1	1	1	1	1	1	1	1
+87	25	2	1	2	3	4	5	6	7	8	9	0
+89	25	2	2	2	2	2	2	2	2	2	2	2
+5	17	750	Л	9700	10100	10300	9900	10100	10500	9800	8700	10000
+24	18	750	Н	11300	11400	11600	11400	10400	11600	11700	10900	10400
+22	18	750	С	12600	12600	12600	12600	12300	11700	11700	11700	10400
+23	18	750	Т	12500	12600	12600	12500	11700	11700	11700	11700	10400
+18	18	500	С	12600	12600	12600	12600	12500	11700	11700	12000	10800
+25	18	1000	Л	12500	13100	13600	13300	12300	13600	13500	12000	13100
+26	18	1000	С	12500	12600	12600	12600	11900	11700	11700	11700	10400
+40	19	750	Н	16100	16300	16300	15700	16400	16400	16400	15100	14600
+41	19	1000	Л	0	0	0	44200	39800	48100	41200	45500	42500
+64	20	1500	Н	0	0	26100	25500	25600	25900	25600	24600	24600
+\.
+
+
+--
+-- Name: specification2_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.specification2_id_seq', 96, true);
+
+
+--
+-- Name: specification_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.specification_id_seq', 11, true);
+
+
+--
+-- Data for Name: stamp; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.stamp (id, id_reducer, type, axis_distance, nom_ratio, build_opt, shaft_end, clim_ver, accom_category) FROM stdin;
+1	1	Ц2У	315	25	12	Ц	У	2
+\.
+
+
+--
+-- Name: stamp_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.stamp_id_seq', 1, true);
+
+
+--
+-- Name: assembly_var assembly_var_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.assembly_var
+    ADD CONSTRAINT assembly_var_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: condition condition_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.condition
+    ADD CONSTRAINT condition_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: destination destination_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.destination
+    ADD CONSTRAINT destination_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: drawing drawing_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.drawing
+    ADD CONSTRAINT drawing_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: parameters2 parameters2_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.parameters2
+    ADD CONSTRAINT parameters2_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: parameters parameters_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.parameters
+    ADD CONSTRAINT parameters_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: reducer reducer_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.reducer
+    ADD CONSTRAINT reducer_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: specification2 specification2_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.specification2
+    ADD CONSTRAINT specification2_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: specification specification_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.specification
+    ADD CONSTRAINT specification_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: stamp stamp_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.stamp
+    ADD CONSTRAINT stamp_pkey PRIMARY KEY (id);
+
+
+--
+-- PostgreSQL database dump complete
+--
+

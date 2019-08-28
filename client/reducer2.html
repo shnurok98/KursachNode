@@ -1,0 +1,363 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Reducer</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- <script type="text/javascript" src="auth.js"></script> -->
+	<script type="text/javascript" src="scReducer.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="prnt">
+			<button type="button" onclick="printSmth()">Печать</button>
+	</div>
+	<div class="main">
+		<h2>Редуктор цилиндрический трехступенчатый </h2>
+		<div class="img">
+			
+		</div>
+		<h3>Назначение</h3>
+		<div class="dest">
+			
+		</div>
+		<h3>Условия применения</h3>
+		<div class="cond">
+			
+		</div>
+		<h3>Технические характеристики</h3>
+		<table class="spec_table" id="spec_hard">
+				<tr>
+					<td>
+						Параметр
+					</td>
+					<td>
+						Редуктор
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Номинальные передаточные числа
+					</td>
+					<td id="gear_ratio">
+						
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Межосевое расстояние, мм
+					</td>
+					<td id="axis_distance">
+						
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Номинальный крутящий момент, Н*м
+					</td>
+					<td id="nom_rot">
+						
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						Допускаемая радиальная нагрузка, Н:
+					</td>
+				</tr>
+				<tr>
+					<td>
+						на входном валу
+					</td>
+					<td id="in_sh">
+						
+					</td>
+				</tr>
+				<tr>
+					<td>
+						на выходном валу
+					</td>
+					<td id="out_sh">
+						
+					</td>
+				</tr>
+				<tr>
+					<td>
+						КПД
+					</td>
+					<td id="kpd">
+						
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Масса, кг
+					</td>
+					<td name="weight">
+						
+					</td>
+				</tr>
+			</table>
+		
+			<h3>Габаритные и присоединительные размеры</h3>
+			<div class="draw">
+				
+			</div>
+
+			<table class="spec_table">
+				<tr>
+					<td>
+						a<sub>wb</sub>
+					</td>
+					<td>
+						a<sub>wn</sub>
+					</td>
+					<td>
+						a<sub>wt</sub>
+					</td>
+					<td>
+						A
+					</td>
+					<td>
+						A<sub>1</sub>
+					</td>
+					<td>
+						B
+					</td>
+					<td>
+						B<sub>1</sub>
+					</td>
+					<td>
+						H
+					</td>
+					<td>
+						H<sub>1</sub>
+					</td>
+					<td>
+						H<sub>2</sub>
+					</td>
+					<td>
+						L<sub>1</sub>
+					</td>
+					<td>
+						L<sub>2</sub>
+					</td>
+					<td>
+						L<sub>3</sub>
+					</td>
+					<td>
+						L<sub>4</sub>
+					</td>
+					<td>
+						L<sub>5</sub>
+					</td>
+				</tr>
+				<tr>
+					<td id="awb">
+						
+					</td>
+					<td id="awn">
+					
+					</td>
+					<td id="awt">
+					
+					</td>
+					<td id="a">
+				
+					</td>
+					<td id="a1">
+					
+					</td>
+					<td id="b">
+					
+					</td>
+					<td id="b1">
+				
+					</td>
+					<td id="h">
+				
+					</td>
+					<td id="h1">
+					
+					</td>
+					<td id="h2">
+					
+					</td>
+					<td id="l1"> 
+					
+					</td>
+					<td id="l2">
+				
+					</td>
+					<td id="l3">
+				
+					</td>
+					<td id="l4">
+					
+					</td>
+					<td id="l5">
+						
+					</td>
+				</tr>
+			</table>
+			<table class="spec_table">
+				<tr>
+					<td>
+						L<sub>6</sub>
+					</td>
+					<td>
+						L<sub>7</sub>
+					</td>
+					<td>
+						b<sub>1</sub>
+					</td>
+					<td>
+						b<sub>2</sub>
+					</td>
+					<td>
+						d<sub>1</sub>
+					</td>
+					<td>
+						d<sub>2</sub>
+					</td>
+					<td>
+						d<sub>3</sub>
+					</td>
+					<td>
+						d<sub>4</sub>
+					</td>
+					<td>
+						d<sub>5</sub>
+					</td>
+					<td>
+						d<sub>6</sub>
+					</td>
+					<td>
+						d<sub>7</sub>
+					</td>
+					<td>
+						d<sub>8</sub>
+					</td>
+				</tr>
+				<tr>
+					<td id="l6">
+			
+					</td>
+					<td id="l7">
+					
+					</td>
+					<td id="nb1">
+					
+					</td>
+					<td id="nb2">
+					
+					</td>
+					<td id="d1"> 
+					
+					</td>
+					<td id="d2">
+					
+					</td>
+					<td id="d3">
+					
+					</td>
+					<td id="d4">
+					
+					</td>
+					<td id="d5">
+				
+					</td>
+					<td id="d6">
+					
+					</td>
+					<td id="d7">
+						
+					</td>
+					<td id="d8">
+					
+					</td>
+				</tr>
+			</table>
+			<table class="spec_table">
+				<tr>
+					<td>
+						h<sub>1</sub>
+					</td>
+					<td>
+						h<sub>2</sub>
+					</td>
+					<td>
+						h<sub>3</sub>
+					</td>
+					<td>
+						h<sub>4</sub>
+					</td>
+					<td>
+						l<sub>1</sub>
+					</td>
+					<td>
+						l<sub>2</sub>
+					</td>
+					<td>
+						l<sub>3</sub>
+					</td>
+					<td>
+						l<sub>4</sub>
+					</td>
+					<td>
+						t<sub>1</sub>
+					</td>
+					<td>
+						t<sub>2</sub>
+					</td>
+					<td>
+						Объем заливаемого масла, л
+					</td>
+					<td>
+						Масса, кг
+					</td>
+				</tr>
+				<tr>
+					<td id="nh1">
+				
+					</td>
+					<td id="nh2"> 
+						
+					</td>
+					<td id="nh3">
+					
+					</td>
+					<td id="nh4">
+					
+					</td>
+					<td id="nl1">
+					
+					</td>
+					<td id="nl2">
+						
+					</td>
+					<td id="nl3">
+					
+					</td>
+					<td id="nl4">
+		
+					</td>
+					<td id="t1">
+					
+					</td>
+					<td id="t2">
+					
+					</td>
+					<td id="v">
+						
+					</td>
+					<td id="weight">
+						
+					</td>
+				</tr>
+			</table>
+		<h3>Варианты сборки редукторов</h3>
+		<div class="var">
+			
+		</div>
+	</div>
+</body>
+</html>

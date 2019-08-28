@@ -1,0 +1,87 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>KursachNode</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="auth.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h2>Редукторы цилиндрические двухступенчатый Ц2У-315Н ÷ Ц2У-500Н и трехступенчатый Ц3У-160 ÷ Ц3У-250</h2>
+	<div class="sidebar">
+		<h4 class="h">Подбор редуктора</h4>
+		<form name="filterForm" id="filterForm">
+			
+			<h5>Количество передаточных ступеней</h5>
+			<input type="radio" name="type" value="2">Двухступенчатые<br>
+			<input type="radio" name="type" value="3">Трехступенчатые<br>
+			<h5>Передаточное отношение</h5>
+			<input type="text" name="gear_ratio" placeholder="Используйте =, >, <">
+		
+			<h5>Межосевое расстояние</h5>
+			<input type="text" name="axis_distance" placeholder="Используйте =, >, <, >=, <=">
+
+			<h5>Частота вращения быстроходного вала</h5>
+			<input type="text" name="rotation_freq" placeholder="Используйте =, >, <, >=, <=">
+			<h5>при режиме</h5>
+			<input type="text" name="mode_work" placeholder="Л, С, Т, Н" title="Л (ПВ=15%); С (ПВ=25%); Т (ПВ=40%); Н (ПВ=100%)">
+			<h5>Допускаемый крутящий момент на тихоходном валу</h5>
+			<input type="text" name="dop_rot" placeholder="Используйте =, >, <, >=, <=">
+
+			<h5>Номинальный крутящий момент</h5>
+			<input type="text" name="nom_rot" placeholder="Используйте =, >, <, >=, <=">
+			<h5>Допускаемая радиальная нагрузка на входном валу</h5>
+			<input type="text" name="in_sh" placeholder="Используйте =, >, <, >=, <=">
+			<h5>Допускаемая радиальная нагрузка на выходном валу</h5>
+			<input type="text" name="out_sh" placeholder="Используйте =, >, <, >=, <=">
+			
+			<!-- 
+			<h5>КПД</h5>
+			<input type="text" name="kpd" placeholder="Используйте =, >, <, >=, <="> 
+			-->
+		
+			<h5>Масса</h5>
+			<input type="text" name="weight" placeholder="Используйте =, >, <, >=, <=">
+			<br>
+			<button type="button" onclick="onFilter()">Показать</button>
+		</form>
+	</div>
+	<!-- <div class="prnt">
+			<button type="button" onclick="printSmth()">Печать</button>
+		</div> -->
+	<div class="main">
+		<!--
+		<div class="box">
+			<b>Ц2У-315Н</b>
+		</div>
+		-->
+	</div>
+	<div class="clear"></div>
+	<div class="cont_menu">
+		
+	</div>
+	<div id="infoText">
+			<p>Для просмотра технических характеристик нажмите ПКМ на редукторе</p>
+	</div>
+	<div class="panel">
+		<div id="logout">
+			<i></i>
+			<button type="button" onclick="logOut()">Выйти</button>
+		</div>
+		<div class="invMenu" id="editMenu">
+			
+		</div>
+		<div class="invMenu" id="deleteMenu">
+			
+		</div>
+		<div class="invMenu" id="createMenu">
+			
+		</div>
+
+		<img src="images/delete.png" title="Удалить" onclick="onActionPanel('d')">
+		<img src="images/change.png" title="Изменить" onclick="onActionPanel('e')">
+		<img src="images/plus.png" title="Добавить" onclick="onActionPanel('c')">
+	</div>
+</body>
+</html>

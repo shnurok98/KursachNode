@@ -1,0 +1,376 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Reducer</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- <script type="text/javascript" src="auth.js"></script> -->
+	<script type="text/javascript" src="scCreateReducer.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="main">
+		<h2>Редуктор цилиндрический трехступенчатый</h2>
+		<form name="reducerForm" id="reducerForm">
+			<input type="text" name="stamp" id="stampR" placeholder="Введите марку редуктора" size="40px">
+			<br>
+			<h3>Изображение</h3>
+			<input type="text" name="image" placeholder="Введите ссылку на изображение" id="linkImageR" size="40px">
+			<br>
+			<h3>Назначение</h3>
+			<textarea name="destination" placeholder="Введите назначение" id="destR"></textarea>
+			<br>
+			<h3>Условия применения</h3>
+			<textarea name="condition" placeholder="Введите условия применения" id="condR"></textarea>
+			<br>
+			<h3>Ссылка на чертеж</h3>
+			<input type="text" name="drawing" id="linkDrawingR" placeholder="Введите ссылку на чертеж" size="40px">
+			<br>
+			<h3>Ссылка на изображение сборок</h3>
+			<input type="text" name="variant" id="linkVarR" placeholder="Введите ссылку на варианты сборок" size="40px">
+		</form>
+		<!--
+		<div class="img">
+			
+		</div>
+		<h3>Назначение</h3>
+		<div class="dest">
+			
+		</div>
+		<h3>Условия применения</h3>
+		<div class="cond">
+			
+		</div>
+		<h3>Тезнические характеристики</h3>
+	-->
+	<h3>Технические характеристики</h3>
+		<form name="tableForm" id="tableForm">
+			<table class="spec_table" id="spec_hard">
+				<tr>
+					<td>
+						Параметр
+					</td>
+					<td>
+						Редуктор
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Номинальные передаточные числа
+					</td>
+					<td>
+						<input type="text" name="gear_ratio" id="gear_ratio">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Межосевое расстояние, мм
+					</td>
+					<td>
+						<input type="number" name="axis_distance" id="axis_distance">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Номинальный крутящий момент, Н*м
+					</td>
+					<td>
+						<input type="number" name="nom_rot" id="nom_rot">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						Допускаемая радиальная нагрузка, Н:
+					</td>
+				</tr>
+				<tr>
+					<td>
+						на входном валу
+					</td>
+					<td>
+						<input type="number" name="in_sh" id="in_sh">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						на выходном валу
+					</td>
+					<td>
+						<input type="number" name="out_sh" id="out_sh">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						КПД
+					</td>
+					<td>
+						<input type="text" name="kpd" id="kpd">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Масса, кг
+					</td>
+					<td>
+						<input type="number" name="weight">
+					</td>
+				</tr>
+			</table>
+			<h3>Габаритные и присоединительные размеры</h3>
+
+			<table class="spec_table">
+				<tr>
+					<td>
+						a<sub>wb</sub>
+					</td>
+					<td>
+						a<sub>wn</sub>
+					</td>
+					<td>
+						a<sub>wt</sub>
+					</td>
+					<td>
+						A
+					</td>
+					<td>
+						A<sub>1</sub>
+					</td>
+					<td>
+						B
+					</td>
+					<td>
+						B<sub>1</sub>
+					</td>
+					<td>
+						H
+					</td>
+					<td>
+						H<sub>1</sub>
+					</td>
+					<td>
+						H<sub>2</sub>
+					</td>
+					<td>
+						L<sub>1</sub>
+					</td>
+					<td>
+						L<sub>2</sub>
+					</td>
+					<td>
+						L<sub>3</sub>
+					</td>
+					<td>
+						L<sub>4</sub>
+					</td>
+					<td>
+						L<sub>5</sub>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="number" name="awb">
+					</td>
+					<td>
+						<input type="number" name="awn">
+					</td>
+					<td>
+						<input type="number" name="awt">
+					</td>
+					<td>
+						<input type="number" name="a">
+					</td>
+					<td>
+						<input type="number" name="a1">
+					</td>
+					<td>
+						<input type="number" name="b">
+					</td>
+					<td>
+						<input type="number" name="b1">
+					</td>
+					<td>
+						<input type="number" name="h">
+					</td>
+					<td>
+						<input type="number" name="h1">
+					</td>
+					<td>
+						<input type="number" name="h2">
+					</td>
+					<td>
+						<input type="number" name="l1">
+					</td>
+					<td>
+						<input type="number" name="l2">
+					</td>
+					<td>
+						<input type="number" name="l3">
+					</td>
+					<td>
+						<input type="number" name="l4">
+					</td>
+					<td>
+						<input type="number" name="l5">
+					</td>
+				</tr>
+			</table>
+			<table class="spec_table">
+				<tr>
+					<td>
+						L<sub>6</sub>
+					</td>
+					<td>
+						L<sub>7</sub>
+					</td>
+					<td>
+						b<sub>1</sub>
+					</td>
+					<td>
+						b<sub>2</sub>
+					</td>
+					<td>
+						d<sub>1</sub>
+					</td>
+					<td>
+						d<sub>2</sub>
+					</td>
+					<td>
+						d<sub>3</sub>
+					</td>
+					<td>
+						d<sub>4</sub>
+					</td>
+					<td>
+						d<sub>5</sub>
+					</td>
+					<td>
+						d<sub>6</sub>
+					</td>
+					<td>
+						d<sub>7</sub>
+					</td>
+					<td>
+						d<sub>8</sub>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="number" name="l6">
+					</td>
+					<td>
+						<input type="number" name="l7">
+					</td>
+					<td>
+						<input type="number" name="nb1">
+					</td>
+					<td>
+						<input type="number" name="nb2">
+					</td>
+					<td>
+						<input type="number" name="d1">
+					</td>
+					<td>
+						<input type="number" name="d2">
+					</td>
+					<td>
+						<input type="text" name="d3">
+					</td>
+					<td>
+						<input type="text" name="d4">
+					</td>
+					<td>
+						<input type="number" name="d5">
+					</td>
+					<td>
+						<input type="text" name="d6">
+					</td>
+					<td>
+						<input type="number" name="d7">
+					</td>
+					<td>
+						<input type="number" name="d8">
+					</td>
+				</tr>
+			</table>
+			<table class="spec_table">
+				<tr>
+					<td>
+						h<sub>1</sub>
+					</td>
+					<td>
+						h<sub>2</sub>
+					</td>
+					<td>
+						h<sub>3</sub>
+					</td>
+					<td>
+						h<sub>4</sub>
+					</td>
+					<td>
+						l<sub>1</sub>
+					</td>
+					<td>
+						l<sub>2</sub>
+					</td>
+					<td>
+						l<sub>3</sub>
+					</td>
+					<td>
+						l<sub>4</sub>
+					</td>
+					<td>
+						t<sub>1</sub>
+					</td>
+					<td>
+						t<sub>2</sub>
+					</td>
+					<td>
+						Объем заливаемого масла, л
+					</td>
+					<td>
+						Масса, кг
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="number" name="nh1">
+					</td>
+					<td>
+						<input type="number" name="nh2">
+					</td>
+					<td>
+						<input type="number" name="nh3">
+					</td>
+					<td>
+						<input type="number" name="nh4">
+					</td>
+					<td>
+						<input type="number" name="nl1">
+					</td>
+					<td>
+						<input type="number" name="nl2">
+					</td>
+					<td>
+						<input type="number" name="nl3">
+					</td>
+					<td>
+						<input type="number" name="nl4">
+					</td>
+					<td>
+						<input type="text" name="t1">
+					</td>
+					<td>
+						<input type="text" name="t2">
+					</td>
+					<td>
+						<input type="text" name="v">
+					</td>
+					<td>
+						<input type="number" name="weight">
+					</td>
+				</tr>
+			</table>
+			<button type="button" onclick="onCreateReducer()">Сохранить редуктор в базе данных</button>
+		</form>
+	</div>
+</body>
+</html>

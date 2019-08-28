@@ -1,0 +1,276 @@
+
+.prnt{
+	position: fixed;
+	top: 0px;
+	right: 0px;
+}
+
+.sidebar{
+	float: left;
+	width: 20%;
+	height: 600px;
+	background-color: rgba(18, 34, 52, 0.2);
+	border: 1px solid black;
+	text-align: center;
+	margin-right: 15px;
+	overflow: auto;
+}
+
+.main{
+	width: 70%;
+	float: left;
+}
+
+.panel{
+	width: 400px;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+}
+
+.box{
+	display: inline-block;
+	position: relative;
+	width: 200px;
+	height: 200px;
+	border: dashed 1px grey;
+	background-image: url(images/loading.png);
+	background-size: 180px;
+	border-radius: 15px;
+	background-repeat: no-repeat;;
+	background-position: center top;
+}
+.box b{
+	color: red;
+	position: absolute;
+	bottom: 5px;
+	left: 7px;
+}
+
+.panel img{
+	margin-left: 15px;
+	float: right;
+	width: 40px;
+	cursor: pointer;
+}
+.invMenu{
+	position: absolute;
+	border: 1px solid black;
+	width: 200px;
+	height: 300px;
+	background-color: rgb(191, 255, 150);
+}
+#editMenu{
+	display: none;
+	bottom: 41px;
+	right: 56px;
+}
+#deleteMenu{
+	display: none;
+	bottom: 41px;
+	right: 0px;
+}
+#createMenu{
+	display: none;
+	bottom: 41px;
+	right: 111px;
+}
+.clear{
+	clear: both;
+}
+.invMenu{
+	overflow: auto;
+}
+.invMenu ul{
+	margin: auto;
+}
+.invMenu li{
+	list-style: none;
+	margin: 5px 5px;
+}
+.invMenu p{
+	margin: 5px 5px;
+	font-style: italic;
+}
+.spec_table{
+	border: 1px solid black;
+}
+.spec_table td{
+	border: 1px solid black;
+	text-align: center;
+}
+.spec_table input{
+	width: 75px;
+	text-align: center;
+}
+.param_table{
+	border: 1px solid black;
+}
+.param_table td{
+	border: 1px solid black;
+	text-align: center;
+}
+.var img{
+	width: 500px;
+}
+#par1 input{
+	width: 75px;
+}
+#par2 input{
+	width: 75px;
+}
+.closeBtn{
+	cursor: pointer;
+	position: absolute;
+	width: 20px;
+	top: 0px;
+	right: 0px;
+	background-image: url(images/close.png);
+	height: 20px;
+	border: none;
+	background-size: 30px;
+	background-position-x: center;
+	background-position-y: center;
+}
+.h{
+	margin: 5px 5px;
+}
+#filterForm{
+	text-align: left;
+	margin: 8px 12px;
+}
+#filterForm h5{
+	margin: 8px 5px;
+}
+#filterForm input[type="text"]{
+	width: 180px;
+}
+#filterForm button{
+	
+	margin: 30px -2px;
+}
+#logout{
+	position: absolute;
+	bottom: 0px;
+}
+#auth{
+	width: 300px;
+	border: 1px solid black;
+	border-radius: 5px;
+	margin: 0 auto;
+	padding: 10px 10px;
+}
+#login{
+    margin-left: 7px;
+    margin-bottom: 5px;
+}
+.cont_menu{
+	text-align: center;
+	display: none;
+	width: 800px;
+	height: 500px;
+	position: absolute;
+	top: 58px;
+	left: 500px;
+	background-color: grey;
+	border: 1px solid black;
+	overflow: auto;
+}
+.minis{
+	text-align: center;
+	font-size: 16px;
+	border: 1px solid black;
+	border-collapse: collapse;
+	margin: 10px auto;
+}
+.minis td{
+	padding: 5px 5px;
+	border: 1px solid black;
+}
+table{
+	border-collapse: collapse;
+	margin: 5px;
+}
+table td{
+	padding: 5px 5px;
+}
+#infoText{
+	position: fixed;
+	bottom: -5px;
+	right: 425px;
+	width: 310px;
+}
+
+
+
+@media print {
+	.prnt{
+			display: none;
+	}
+	.img{
+		display: inline-block;
+		width: 35%;
+	}
+	.img img{
+		width: 100%;
+	}
+	h2{
+		text-align: center;
+	}
+	.main{
+		width: 85%;
+	}
+	.dest{
+		display: inline-block;
+		width: 60%;
+		margin-left: 20px;
+	}
+	table{
+		font-size:12px;
+		display: inline-block;
+	}
+	table td{
+		padding: 1px 1px;
+	}
+	.var img{
+		width: 55%;
+	}
+	.draw img{
+		width: 85%;
+	}
+
+}
+/*.prnt{
+		display: none;
+}
+.img{
+	display: inline-block;
+	width: 35%;
+}
+.img img{
+	width: 100%;
+}
+h2{
+	text-align: center;
+}
+.main{
+	width: 85%;
+}
+.dest{
+	display: inline-block;
+	width: 60%;
+	margin-left: 20px;
+}
+table{
+	font-size:12px;
+	display: inline-block;
+}
+table td{
+	padding: 1px 1px;
+}
+.var img{
+	width: 55%;
+}
+.draw img{
+	width: 85%;
+}*/
